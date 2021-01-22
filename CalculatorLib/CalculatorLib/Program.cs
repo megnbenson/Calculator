@@ -19,6 +19,17 @@ namespace CalculatorLib
 
         public static int Divide(int num1, int num2)
         {
+            try
+            {
+                if (num2 == 0)
+                {
+                    throw new System.DivideByZeroException($"You cannot divide by {num2}");
+                }
+            }catch (Exception e)
+            {
+                return 0;
+            }
+            
             return num1 / num2;
         }
 
