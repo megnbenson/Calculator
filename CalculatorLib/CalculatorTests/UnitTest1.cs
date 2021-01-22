@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using CalculatorLib;
+using Shouldly;
 
 namespace CalculatorTests
 {
@@ -11,7 +12,8 @@ namespace CalculatorTests
         public void AddTest(int num1, int num2, int expectedResult)
         {
             var result = StaticCalculator.Add(num1, num2);
-            Assert.AreEqual(expectedResult, result);
+            //Assert.AreEqual(expectedResult, result);
+            result.ShouldBe(expectedResult);
         }
 
         [TestCase(8, 1, 7)]

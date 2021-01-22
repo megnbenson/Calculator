@@ -1,0 +1,52 @@
+﻿<Window x:Class="WPFcoreCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFcoreCalculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="2*" />
+            <!--setting the height of the 2nd row so it's twice the size of the other rows-->
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <!--Update button which is placed in a specified row-->
+        <Label x:Name="NameInputLabel" Grid.Column="2" Grid.ColumnSpan="3" FontSize="24" Margin="104,17,10,0" Content="Calculator&#xD;&#xA;"/>
+
+        <!--//Left num-->
+        <TextBox x:Name="LeftNum" Grid.Row="1" Grid.Column= "2" Background="#FF9AF32E" TextChanged="LeftNum_TextChanged" Margin="0,17,114,54" Grid.ColumnSpan="2" />
+        <Label x:Name="LeftNameOutputLabel" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="6" FontSize="24" Foreground="Fuchsia"></Label>
+
+        <!--//Right Num-->
+        <TextBox x:Name="RightNum" Grid.Row="1" Grid.Column= "3" Background="#FFF32E2E" TextChanged="RightNum_TextChanged" Margin="83,17,30,54" Grid.ColumnSpan="2" />
+        <Label x:Name="RightNameOutputLabel" Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="6" FontSize="24" Foreground="Fuchsia"></Label>
+
+        <!--buttons-->
+        <Button x:Name="Add" Content="+" Grid.Column="2" HorizontalAlignment="Left" Height="54" Margin="0,99,0,0" Grid.RowSpan="2" Grid.Row="1" VerticalAlignment="Top" Width="57" Click="Add_Click"/>
+        <Button x:Name="Minus" Content="-" Grid.Column="2" HorizontalAlignment="Left" Height="54" Margin="79,99,0,0" Grid.RowSpan="2" Grid.Row="1" VerticalAlignment="Top" Width="57" Grid.ColumnSpan="2" Click="Minus_Click"/>
+        <Button x:Name="Multiply" Content="*" Grid.Column="2" HorizontalAlignment="Left" Height="54" Margin="79,0,0,0" Grid.Row="3" VerticalAlignment="Center" Width="57" Grid.ColumnSpan="2" Click="Multiply_Click"/>
+        <Button x:Name="Divide" Content="/" Grid.Column="2" HorizontalAlignment="Left" Height="54" Grid.Row="3" VerticalAlignment="Center" Width="57" Click="Divide_Click"/>
+        <Button x:Name="Modulus" Content="%" Grid.Column="2" HorizontalAlignment="Left" Height="54" Margin="79,10,0,0" Grid.RowSpan="2" Grid.Row="4" VerticalAlignment="Top" Width="57" Grid.ColumnSpan="2" Click="Modulus_Click"/>
+
+        <!--equals-->
+        <Label x:Name="EqualsLabel" Content="=" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="4" FontSize="100" Foreground="Black" Background="#FFDCC3C3" Margin="57,99,114,45" Grid.RowSpan="5"></Label>
+
+
+    </Grid>
+</Window>
